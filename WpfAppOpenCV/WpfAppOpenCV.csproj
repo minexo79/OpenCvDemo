@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\connect.png" />
+    <None Remove="Resources\disconnect.png" />
+    <None Remove="Resources\jf-openhuninn-2.0.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenCvSharp4" Version="4.8.0.20230708" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.8.0.20230708" />
+    <PackageReference Include="OpenCvSharp4.WpfExtensions" Version="4.8.0.20230708" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\connect.png" />
+    <Resource Include="Resources\disconnect.png" />
+    <Resource Include="Resources\jf-openhuninn-2.0.ttf" />
+  </ItemGroup>
+
+</Project>

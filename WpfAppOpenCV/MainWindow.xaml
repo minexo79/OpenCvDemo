@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfAppOpenCV.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppOpenCV"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="720" Width="1280">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Menu Background="#ADC4CE">
+            <MenuItem Header="一般" />
+            <MenuItem Header="幫助" />
+        </Menu>
+        <ToolBarTray Grid.Row="1">
+            <ToolBar>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Padding="6,0,6,0">網址</TextBlock>
+                    <TextBox x:Name="tbxIp" Text="10.147.18.101" Width="128" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Padding="6,0,6,0">連接埠</TextBlock>
+                    <TextBox x:Name="tbxPort" Text="554" Width="48" />
+                </StackPanel>
+                <Button Style="{StaticResource btnNormal}" 
+                        x:Name="btnConnect" Click="btnConnect_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Connect.png" Width="24" />
+                        <TextBlock Margin="3,0,0,0">連線</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource btnNormal}" 
+                        x:Name="btnDisconnect" Click="btnDisconnect_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Disconnect.png" Width="24" />
+                        <TextBlock Margin="3,0,0,0">斷線</TextBlock>
+                    </StackPanel>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        <Image Grid.Row="2" x:Name="image" Stretch="Fill" />
+    </Grid>
+</Window>
